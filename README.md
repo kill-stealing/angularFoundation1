@@ -1,0 +1,2 @@
+# angularFoundation1
+把angular的基础知识整理在这个工程中
