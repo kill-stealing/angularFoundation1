@@ -1,0 +1,10 @@
+<h1>股票例子</h1>
+<div>
+    <app-price-quote (lastPrice1)="handleLastPrice($event)" (buy)="buyQuote($event)"></app-price-quote>
+</div>
+<div>
+    <hr> 股票代码是 {{priceQuote?.stockCode}},最新股票价格是{{priceQuote?.lastPrice | number:'2.2-2'}}
+</div>
+<div>
+    <app-quote-order [quote]="buy"></app-quote-order>
+</div>

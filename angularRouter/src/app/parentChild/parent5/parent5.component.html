@@ -1,0 +1,21 @@
+<div class="wrap">
+    <h3>
+      我是父组件 
+    </h3>
+    <div>
+        <a [routerLink]="['./']">child6</a>
+        <a [routerLink]="['./child7']">child7</a>
+        <router-outlet></router-outlet>
+    </div>
+    <div>
+      这个div定义在父组件中
+    </div>
+    <div>
+      <app-child6>
+        <div class="header">这是页头，这个是父组件到子组件的投影片段,title是{{title}}</div>
+        <div class="footer">这是页脚，这个是父组件到子组件的投影片段</div>
+      </app-child6>
+    </div>
+  </div>
+  <div [innerHTML]="divContent"></div>
+  <h3>{{message}}</h3>

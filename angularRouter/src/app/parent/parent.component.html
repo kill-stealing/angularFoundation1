@@ -1,0 +1,12 @@
+<div>
+  <h2>我是父组件</h2>
+  <div>
+    问候语: <input type="text" [(ngModel)]="greeting">
+  </div>
+  <div>
+    姓名： <input type="text" [(ngModel)]="user.name">
+  </div>
+</div>
+<div>
+  <app-child1 [greeting]="greeting" [user]="user"></app-child1>
+</div>

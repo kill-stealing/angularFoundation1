@@ -1,0 +1,42 @@
+<div>
+  <form [formGroup]="formModel" (ngSubmit)="onSubmit()">
+    <div>用户名：<input type="text" formControlName="username"></div>
+    <div [hidden]="formModel.get('username').valid || formModel.get('username').untouched">
+      <div [hidden]="!formModel.hasError('required','username')">用户名是必填项</div>
+      <div [hidden]="!formModel.hasError('minlength','username')">用户名至少6位</div>
+      <div [hidden]="!formModel.hasError('ifRight','username')">
+        {{formModel.getError('ifRight','username')?.descs}}
+      </div>
+    </div>
+    <div [hidden]="!formModel.get('username').pending">
+      正在验证手机号的合法性
+    </div>
+    <div [hidden]="!formModel.hasError('ifRight1','username')">
+      {{formModel.getError('ifRight1','username')?.descs}}
+    </div>
+    <div>手机号：<input formControlName="mobile1" type="text"></div>
+    <div [hidden]="formModel.get('mobile1').valid||formModel.get('mobile1').pristine">
+      <div [hidden]="!formModel.hasError('minlength','mobile1')">手机号至少6位</div>
+      <div [hidden]="!formModel.hasError('ifRight','mobile1')">
+        {{formModel.getError('ifRight','mobile1')?.descs}}
+      </div>
+    </div>
+    <div formGroupName="passwordGroup">
+      <div>密码：<input formControlName="password" type="text"></div>
+      <div [hidden]="!formModel.hasError('minlength',['passwordGroup','password'])">
+        密码至少6位
+      </div>
+      <div>确认密码：<input formControlName="pconfirm" type="text"></div>
+      <div [hidden]="!formModel.hasError('minlength',['passwordGroup','pconfirm'])">
+        密码至少6位
+      </div>
+    </div>
+    <div [hidden]="!formModel.hasError('equal','passwordGroup')">
+      {{formModel.getError('equal','passwordGroup')?.descxxx}}
+    </div>
+    <button type="submit">注册</button>
+  </form>
+</div>
+<div>
+  {{formModel.status}}
+</div>

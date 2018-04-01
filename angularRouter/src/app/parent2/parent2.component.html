@@ -1,0 +1,9 @@
+<h1>父组件调用子组件的方法ViewChild</h1>
+<div>
+  <app-child3 #child1></app-child3>
+  <app-child3 #child2></app-child3>
+</div>
+<div>
+  <button type="button" (click)="callChild($event)">callChild1</button>
+  <button type="button" (click)="child2.log('Hello jerry')">callChild2</button>
+</div>

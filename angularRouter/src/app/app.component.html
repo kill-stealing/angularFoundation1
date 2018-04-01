@@ -1,0 +1,33 @@
+<a [routerLink]="['/home']">主页</a>
+<a [routerLink]="['/product']">商品详情</a>
+<a [routerLink]="['/product1',1]">商品详情</a>
+<button type="button" (click)="toProduct()">商品详情</button>
+<a [routerLink]="[{outlets:{primary:'home',aux:'chat'}}]">开始聊天</a>
+<a [routerLink]="[{outlets:{aux:null}}]">结束聊天</a>
+<a [routerLink]="['/quote']">股票 输入输出属性例子</a>
+<a [routerLink]="['/reactive']">响应式编程例子</a>
+<div>
+    <a [routerLink]="['/parent']">组件声明周期ngOnChanges</a>
+    <a [routerLink]="['/parent1']">组件声明周期ngCheck</a>
+    <a [routerLink]="['/parent2']">父组件调用子组件</a>
+    <a [routerLink]="['/parent3']">ngAfterViewInit-Checked</a>
+</div>
+<div>
+    <a [routerLink]="['/parent4']">投影</a>
+    <a [routerLink]="['/parent5']">ngAfterContentInit-Checked</a>
+</div>
+<div>
+    <h3>表单</h3>
+    <a [routerLink]="['/parent6']">模板式表单</a>
+    <a [routerLink]="['/parent7']">模板式表单demo</a>
+    <a [routerLink]="['/parent8']">响应式表单</a>
+    <a [routerLink]="['/parent9']">响应式表单重构和校验器</a>
+</div>
+<div>
+    <h3>http通信</h3>
+    <a [routerLink]="['/parent10']">http通信</a>
+</div>
+<div>
+    <router-outlet></router-outlet>
+    <router-outlet name="aux"></router-outlet>
+</div>
